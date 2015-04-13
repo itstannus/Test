@@ -24,12 +24,16 @@ public class Problems {
 	public void sumEvenFibonacciTerms(long number){
 		long sum=0,N=0, counter=0;
 		do{
+			System.out.println("Calculating for : "+counter);
 			N = fibonacciUsingRecurrenceRelation(counter);
-			if(counter>2&&counter%2==0){
+			System.out.println("N is : "+N);
+			System.out.println("Sum is : "+sum);
+			if(N>=2&&N%2==0){
+				System.out.println("Adding : "+N);
 				sum+=N;
 			}
 			counter++;
-		}while(N<4000000);
+		}while(N<=4000000);
 		System.out.println(sum);
 	}
 	/*Using the usual recursion*/
@@ -73,14 +77,14 @@ public class Problems {
 	    // create vector F1
 	    long[] F1=new long[K+1];
 	    F1[1] = 1;
-	    F1[2] = 2;
+	    F1[2] = 1;
 
 	    // create matrix T
 	    long[][] T=new long[K+1][K+1];
 	    T[1][1] = 0;
 	    T[1][2] = 1;
 	    T[2][1] = 1;
-	    T[2][2] = 2;
+	    T[2][2] = 1;
 
 	    // raise T to the (N-1)th power
 	    if (N == 1)
@@ -98,6 +102,6 @@ public class Problems {
 		Problems problem = new Problems();
 		problem.sum3OR5();
 		
-		problem.sumEvenFibonacciTerms(4000000);
+		problem.sumEvenFibonacciTerms(4000);
 	}
 }
