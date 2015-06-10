@@ -8,7 +8,8 @@ public class NthPrime {
 
 	Map<Long,Long>sieve=new LinkedHashMap<Long,Long>();
 	List<Long> sieveList=new ArrayList<Long>();
-	public void findNthPrime(long n){
+	public long findNthPrime(long n){
+		sieveList=new ArrayList<Long>();
 		long limit = 50*n + 1;
 		for(long i=2;i<=limit;i++){
 			sieve.put(i,i);
@@ -22,6 +23,7 @@ public class NthPrime {
 		}
 		sieveList.addAll(sieve.keySet());
 		System.out.println("The Nth prime is : "+sieveList.get((int) n-1));
+		return sieveList.get((int) n-1);
 	}
 	public static void main(String...args){
 		NthPrime nThPrime = new NthPrime();
