@@ -6,6 +6,8 @@ import java.util.List;
 
 public class LargestPrimeFactor {
 
+private static int testVariable;
+
 	public BigDecimal primeFactor(BigDecimal number){
 		List<BigDecimal>primeFactorList=new ArrayList<BigDecimal>();
 		BigDecimal divisor=new BigDecimal(2);
